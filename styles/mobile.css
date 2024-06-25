@@ -1,0 +1,102 @@
+.hamburger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 30px;
+    height: 3px;
+    padding-left: 1.25px;
+    transition: transform 0.3s; 
+}
+@media  (max-width: 1280px) {
+                                                /*Primeira parte*/
+section {
+    min-height: 65vh;
+}
+                                                                               /*MENU HAMBURGUER*/
+       
+.hamburger {
+    animation: fadeInFromLeft 1s ease forwards;
+    z-index: 100 !important;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    padding: 5px;
+    margin-top: 0.5rem;
+}
+    
+.hamburger-bar {
+    width: 100%;
+    height: 3px; 
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.3s ease; 
+    border-radius: 10px;
+}
+    
+    /* Animações para o ícone de hambúrguer */
+.hamburger.active .bar-1 {
+     transform: rotate(45deg) translate(6px, 5px); 
+}
+    
+.hamburger.active .bar-2 {
+    opacity: 0; /* Oculta a segunda linha */
+}
+    
+.hamburger.active .bar-3 {
+    transform: rotate(-45deg) translate(6px, -5px); 
+}
+    
+    
+    /* Estilos para a navegação */
+    
+li {
+    align-items: center;
+}
+li.login-btn  {
+    margin-left: -1rem;
+    background: linear-gradient(to right, #0e0b2b, #000000);
+}
+.nav-list {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90vw;
+    height: 120%;
+    background: linear-gradient(to right, #000000,black, black, #080324);
+    background-size: 200% 200%;
+    animation: gradientChange 5s ease infinite;
+    clip-path: circle(100px at 90% -15%);
+    transition: clip-path 1s ease-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    margin-top: 0;
+}
+    
+.nav-list a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+    
+.nav-list li {
+    list-style: none;
+}
+    
+    /* Estilos ativos */
+.nav.active .nav-list {
+    clip-path: circle(1500px at 90% -15%);
+    pointer-events: all;
+}
+    
+.nav.active .nav-list a {
+        opacity: 1;
+}
+}
